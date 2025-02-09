@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_shared_meta_socials",
+  "info": {
+    "displayName": "metaSocial",
+    "icon": "twitter"
+  },
+  "options": {},
+  "attributes": {
+    "socialNetwork": {
+      "type": "enumeration",
+      "enum": [
+        "facebook",
+        "instagram",
+        "skype",
+        "telegram",
+        "tiktok",
+        "youtube"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
