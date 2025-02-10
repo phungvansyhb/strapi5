@@ -4,7 +4,7 @@
   "info": {
     "singularName": "comment",
     "pluralName": "comments",
-    "displayName": " comment",
+    "displayName": " Comment",
     "description": ""
   },
   "options": {
@@ -16,21 +16,13 @@
     }
   },
   "attributes": {
-    "author": {
+    "authorName": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "type": "string"
-    },
-    "createdDate": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "datetime"
     },
     "content": {
       "pluginOptions": {
@@ -50,21 +42,14 @@
     },
     "article": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::article.article"
-    },
-    "commentId": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "uid"
-    },
-    "article_id": {
-      "type": "relation",
       "relation": "manyToOne",
       "target": "api::article.article",
+      "inversedBy": "comments"
+    },
+    "app": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::app.app",
       "inversedBy": "comments"
     }
   }

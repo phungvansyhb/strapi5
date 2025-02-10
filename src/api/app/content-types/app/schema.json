@@ -4,7 +4,7 @@
   "info": {
     "singularName": "app",
     "pluralName": "apps",
-    "displayName": "app",
+    "displayName": "App",
     "description": ""
   },
   "options": {
@@ -17,9 +17,6 @@
     },
     "description": {
       "type": "string"
-    },
-    "guild": {
-      "type": "richtext"
     },
     "source_url": {
       "type": "string"
@@ -47,11 +44,6 @@
       "target": "api::app.app",
       "mappedBy": "related_apps"
     },
-    "seo": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.seo"
-    },
     "slug": {
       "type": "uid",
       "targetField": "name"
@@ -60,7 +52,20 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::comment.comment",
-      "mappedBy": "app_id"
+      "mappedBy": "app"
+    },
+    "guild": {
+      "type": "customField",
+      "options": {
+        "preset": "myCustomPreset"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "app_domains": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::app-domain.app-domain",
+      "inversedBy": "apps"
     }
   }
 }
